@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Categories from './components/categories/categories.component';
 
-function App() {
+const App = () =>  {
+  const categories = [
+    {
+      "id": 1,
+      "title": "boards",
+      "imageUrl": "https://i1.adis.ws/i/ride/ride_2223_feature-banner-sm_thrash-collection-lp?w=408&sm=aspect&aspect=408:302&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&qlt=75&fmt=webp&fmt.interlaced=true&dpi=96"
+    },
+    {
+      "id": 2,
+      "title": "bindings",
+      "imageUrl": "https://i1.adis.ws/i/ride/ride_2223_mm-banner_bindings_composite-series?w=342&sm=aspect&aspect=342:229&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&qlt=75&fmt=webp&fmt.interlaced=true&dpi=96"
+    },
+    {
+      "id": 3,
+      "title": "boots",
+      "imageUrl": "https://i1.adis.ws/i/ride/ride_2223_mm-banner_boots_lasso-pro?w=342&sm=aspect&aspect=342:229&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&qlt=75&fmt=webp&fmt.interlaced=true&dpi=96"
+    }
+  ]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Categories categories={categories} />
   );
 }
 
