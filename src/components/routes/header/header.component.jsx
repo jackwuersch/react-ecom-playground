@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import './header.component.styles.scss'
 
 
 const Header = () => {
@@ -14,7 +15,6 @@ const Header = () => {
                     SHOP
                 </Link>
             </div>
-        <h1>Header</h1>
         </div>
         <Outlet />
       </Fragment>
