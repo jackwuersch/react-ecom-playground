@@ -1,4 +1,4 @@
-import Categories from '../../categories-container/categories-container.component';
+import Categories from '../../components/categories-container/categories-container.component'
 
 const Home = () =>  {
   const categories = [

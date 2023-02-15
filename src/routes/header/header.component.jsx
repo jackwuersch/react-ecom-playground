@@ -15,6 +15,11 @@ const Header = () => {
                     SHOP
                 </Link>
             </div>
+            <div className='header-links-container'>
+                <Link className='header-link' to='/sign-in'>
+                    Sign In
+                </Link>
+            </div>
         </div>
         <Outlet />
       </Fragment>
