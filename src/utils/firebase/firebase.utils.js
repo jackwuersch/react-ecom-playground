@@ -12,13 +12,14 @@ import {
  setDoc
 } from 'firebase/firestore';
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCd2-wiXUWlld1uTCPayMJ2qXuxl9cG_GA",
-  authDomain: "ecommerce-playground-db.firebaseapp.com",
-  projectId: "ecommerce-playground-db",
-  storageBucket: "ecommerce-playground-db.appspot.com",
-  messagingSenderId: "563124766836",
-  appId: "1:563124766836:web:76194a59e29454f955e921"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
@@ -31,6 +32,7 @@ provider.setCustomParameters({
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider);
 
 export const db = getFirestore();
 
