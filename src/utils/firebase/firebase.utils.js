@@ -1,10 +1,13 @@
 import { initializeApp } from 'firebase/app';
+
 import { 
   getAuth, 
   signInWithRedirect, 
   signInWithPopup, 
-  GoogleAuthProvider 
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword
 } from 'firebase/auth';
+
 import {
  getFirestore,
  doc,
@@ -12,7 +15,8 @@ import {
  setDoc
 } from 'firebase/firestore';
 
-
+// docs say i dont need to do this but i dunno it feels wrong
+ 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -37,6 +41,7 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (userAuth) => {
+  if (!userAuth) return;
   const userDocRef = doc(db, 'users', userAuth.uid);
   console.log(userDocRef);
 
@@ -56,7 +61,11 @@ export const createUserDocumentFromAuth = async (userAuth) => {
       console.log('error creating the user', error.message);
     }
   }
-
   return userDocRef;
+};
 
-}
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  return await createUserWithEmailAndPassword(auth, email, password);
+};
