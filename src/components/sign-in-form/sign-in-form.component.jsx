@@ -23,13 +23,6 @@ const SignInForm = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
-
-
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    createUserDocumentFromAuth(user)
-}
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -38,6 +31,17 @@ const SignInForm = () => {
       console.log(response);
       resetFormFields();
     } catch (error) {
+      switch(error.code) {
+        case 'auth/wrong-password':
+          alert('Incorrect password for email');
+          break;
+        case 'auth/user-not-found':
+          alert('No user found with this email');
+          break;
+        default:
+          // firebase still doesnt have docs for other errors so just using primary ones now.
+          console.log(error);
+      }
     }
   };
 
@@ -70,7 +74,7 @@ const SignInForm = () => {
         />
         <div className='buttons-container'>
         <Button type='submit' >Sign In</Button>
-        <Button buttonType='google' onClick={signInWithGooglePopup} >Google Sign In</Button>
+        <Button type='button' buttonType='google' onClick={signInWithGooglePopup} >Google Sign In</Button>
         </div>
       </form>
     </div>
