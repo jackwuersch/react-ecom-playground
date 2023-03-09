@@ -1,9 +1,13 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './header.component.styles.scss'
 
+import { UserContext } from '../../contexts/user.context'
+
 
 const Header = () => {
+    const { currentUser } = useContext(UserContext)
+    console.log(currentUser)
     return (
       <Fragment>
         <div className='header'>
