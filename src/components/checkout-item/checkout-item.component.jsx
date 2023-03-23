@@ -1,6 +1,4 @@
-import "./cart-item.styles.scss";
-
-const CartItem = ({ cartItem }) => {
+const CheckoutItem = ({ cartItem }) => {
   const { imageUrl, price, title, quantity } = cartItem;
 
   return (
@@ -16,4 +14,4 @@ const CartItem = ({ cartItem }) => {
   );
 };
 
-export default CartItem;
+export default CheckoutItem;
