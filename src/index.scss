@@ -1,10 +1,11 @@
 body {
   margin: 0;
+  padding: 20px 40px;
   font-family: 'Jost', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 * {
@@ -18,7 +19,7 @@ code {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   &:hover {
     text-decoration: underline;
   }
