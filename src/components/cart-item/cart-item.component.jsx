@@ -5,6 +5,7 @@ const CartItem = ({ cartItem }) => {
 
   return (
     <div className='cart-item-container'>
+      <img src={imageUrl} alt={`${title}`} />
       <div className='item-details'>
         <span className='title'>{title}</span>
         <span className='price'>
