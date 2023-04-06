@@ -4,7 +4,7 @@ const Home = () => {
   const categories = [
     {
       id: 1,
-      title: "BOARDS",
+      title: "SNOWBOARDS",
       imageUrl:
         "https://i1.adis.ws/i/ride/ride_2223_feature-banner-sm_thrash-collection-lp?w=408&sm=aspect&aspect=408:302&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&qlt=75&fmt=webp&fmt.interlaced=true&dpi=96",
     },
