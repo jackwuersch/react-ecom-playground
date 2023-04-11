@@ -1,3 +1,6 @@
+# Ecommerce without Shopify
+This project is just to learn and play around personally due to a possible upcoming ecommerce project that doesnt want to rely on Shopify. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
